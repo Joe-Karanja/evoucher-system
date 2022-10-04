@@ -1,0 +1,57 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>Registered Farmers</span><br><br>
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <th>REGISTRATION<br>DATE</th>
+                        <th>FARMER ID</th>
+                        <th>FARMER TYPE</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>ID NUMBER</th>
+                        <th>TAX PIN</th>
+                        <th>DISTRICT</th>
+                        <th>REGION</th>
+                        <th>View Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let farmer of listFarmers;let i = index">
+                        <td>{{farmer.date}}</td>
+                        <td>{{farmer.farmer_id}}</td>
+                        <td>{{farmer.famerType}}</td>
+                        <td>{{farmer.firstName}}</td>
+                        <td>{{farmer.lastName}}</td>
+                        <td>{{farmer.id_number}}</td>
+                        <td>{{farmer.tax_pin}}</td>
+                        <td>{{farmer.district}}</td>
+                        <td>{{farmer.region}}</td>
+                        <td>
+                            <div>
+                                <button nz-button nzType="primary" nzSize="small"  nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomCenter"><span nz-icon nzType="file-image"></span>View</button>
+                                <nz-dropdown-menu #menu="nzDropdownMenu">
+                                    <ul nz-menu>
+                                        <li nz-menu-item (click)="view(farmer)">
+                                        <span nz-icon nzType="eye" style="color: blue;"></span>view
+                                        </li>
+                                        <li nz-menu-item>
+                                        <span nz-icon nzType="edit" style="color: blue;"></span>edit
+                                        </li>
+                                        <li nz-menu-item>
+                                        <span nz-icon nzType="delete" style="color: red;"></span>delete
+                                        </li>
+                                    </ul>
+                                    </nz-dropdown-menu>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>
+
+    

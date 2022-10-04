@@ -1,0 +1,14 @@
+.inner-box {
+    padding: 8px 0;
+  }
+  nz-card{
+    border-radius: 6px;
+    font-size: 13px;
+}
+span{
+  float: left;
+}
+
+mat-menu{
+  background: #fff;
+}

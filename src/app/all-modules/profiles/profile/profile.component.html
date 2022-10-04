@@ -1,0 +1,97 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>Available Profiles</span><br><br>
+        <button nz-button nzType="primary" nzDanger (click)="showModal()">Add New Profile</button>
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>PROFILE NAME</th>
+                        <th>DESCRIPTION</th>
+                        <th>STATUS</th>
+                        <th>CREATED ON</th>
+                        <th>VIEW<br>DETAILS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let profile of listProfiles;let i = index">
+                        <td>{{profile.id}}</td>
+                        <td>{{profile.name}}</td>
+                        <td>{{profile.description}}</td>
+                        <td><nz-tag [nzColor]="'green'">{{profile.status}}</nz-tag></td>
+                        <td>{{profile.createdOn}}</td>
+                        <td style="padding-left: 20px;">
+                            <div>
+                            <button nz-button nzType="primary" nzSize="small"  nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomCenter"><span nz-icon nzType="file-image"></span>View</button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="view(profile)">
+                                    <span nz-icon nzType="eye" style="color: blue;"></span>view
+                                    </li>
+                                    <li nz-menu-item (click)="showModal()">
+                                    <span nz-icon nzType="edit" style="color: blue;"></span>edit
+                                    </li>
+                                    <li nz-menu-item>
+                                    <span nz-icon nzType="delete" style="color: red;"></span>delete
+                                    </li>
+                                </ul>
+                                </nz-dropdown-menu>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>
+<nz-modal
+[(nzVisible)]="isVisible"
+[nzTitle]="modalTitle"
+[nzContent]="modalContent"
+[nzFooter]="modalFooter"
+(nzOnCancel)="handleCancel()"
+>
+<ng-template #modalTitle>Create A New Profile</ng-template>
+<ng-template #modalContent>
+  <form  [formGroup]="addProfile">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Name <span class="text-danger">*</span></label>
+          <input class="form-control" type="text" formControlName="name">
+        </div>
+      </div>
+      <div class=" col-sm-6">
+        <div class="form-group">
+          <label>Description</label>
+          <input class="form-control" type="text" formControlName="description">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Status</label>
+          <mat-select formControlName="status" class="form-control">
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Disabled">Disabled</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class=" col-sm-6">
+        <div class="form-group">
+          <label>Date Created</label>
+          <input class="form-control" type="text" formControlName="createdOn">
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-template>
+<ng-template #modalFooter>
+  <button nz-button nzType="default" nzDanger (click)="handleCancel()">Cancel</button>
+  <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading" style="margin-right: 12em;">
+    Submit
+</button>
+</ng-template>
+</nz-modal>
+    

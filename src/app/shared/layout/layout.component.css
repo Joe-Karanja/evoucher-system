@@ -1,0 +1,57 @@
+:host ::ng-deep .ant-tabs-nav {     display: flex !important;   }    :host ::ng-deep .ant-tabs-nav .ant-tabs-tab {     flex-grow: 1 !important;     margin-right: 0px !important;     width: 100% !important;     text-align: center !important;   }
+
+.logo {
+    height: fit-content;
+    background: white;
+    /* margin: 10px; */
+    /* align-items: center; */
+    border-bottom: red solid;
+    }
+
+  .layout {
+    min-height: 100vh;
+  }
+
+  nz-sider {
+    /* width: 240px; */
+    font-size: 5px;
+    overflow: auto;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background-color: #f7f7f7;
+  }
+
+  .right-layout {
+    margin-left: 250px;
+    overflow: auto;
+  }
+
+  nz-header {
+    /* background: #fff; */
+    background-color: #f7f7f7;
+    padding: 0;
+    padding-left: 10px;
+    border-bottom: burlywood solid;
+  }
+
+  nz-content {
+    margin: 10px 0px 0;
+    overflow: auto;
+  }
+
+  .inner-content {
+    padding: 0px;
+    padding-left: 10px;
+  }
+
+  nz-footer {
+    text-align: center;
+    font-size: 15px;
+    color: red
+  }
+
+  button{
+    border-radius: 5px;
+  }
+  

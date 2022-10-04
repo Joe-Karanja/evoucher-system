@@ -1,0 +1,148 @@
+<nz-layout>
+    <nz-header style="background-color: #001529">
+      <p style="text-align: left;padding-left: 80px;padding-top:20px;font-size: medium">Cargill, Incorporated PO Box 9300 Minneapolis, MN 55440-9300 United States</p>
+    </nz-header><hr>
+    <nz-header style="background-color: white; height: 120px">
+      <img style="padding-left: 80px;padding-top: 20px;" src="assets/images/logo/Cargill_R_H_black_3c.png">
+    </nz-header><hr>
+    <nav style="background-color: white">
+      <mat-tab-group headerPosition="below" style="padding-left: 120px">
+        <mat-tab label="about cargil"></mat-tab>
+        <mat-tab label="durability"></mat-tab>
+        <mat-tab label="products and services"></mat-tab>
+      </mat-tab-group>
+    </nav>
+      <div id="main" class="grid grid-rows-3" >
+        <div id="container" class=" rounded-lg">
+          <nz-card style="width:400px;float: right;margin-right: 5em;margin-top: -10px" nzTitle="Enter the login account details.">
+            <form  class="space-y-6" action="#" method="POST">
+              <div>
+                <label style="text-align: left" for="email" class="block text-sm font-medium text-gray-700"> Email </label>
+                <div class="mt-1">
+                  <input
+                    id="email"
+                    ngModel
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    autocomplete="email"
+                    required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+              </div> <div>
+              <label style="text-align: left" for="password" class="block text-sm font-medium text-gray-700"> Password </label>
+              <div class="mt-1" id="show_hide_password">
+                <input
+                  id="password"
+                  ngModel
+                  name="password"
+                  type="password"
+                  minlength="4"
+                  autocomplete="current-password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+              </div>
+            </div>
+              <div>
+                <button class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        style="margin-bottom: 10px"
+                        type="submit"
+                >Connection</button>
+              </div>
+              <div class="text-sm" style="text-align: left">
+                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
+              </div>
+            </form>
+          </nz-card>
+        </div>
+        <div class="grid grid-cols-2" style="height: 8em;background-color:#333333; margin-bottom: 10px">
+          <div style="width: 80em">
+            <h2
+              style="color: white; font-size: xx-large;padding-top: 30px;padding-left: 5em;text-align: left">
+              We are committed to making the world prosper
+            </h2>
+          </div>
+          <div style="padding-top: 30px;margin-right: 10em">
+            <button mat-stroked-button style="float: right;color: white; font-size: medium;background-color: #023669; height: 4em;width: 10em">contact us</button>
+          </div>
+        </div>
+  
+        <div class="grid grid-cols-3 gap-10 justify-evenly" style="padding-left: 8em;margin-top: -20em">
+          <div class=" w-26 h-12">
+            <img style="border-radius: 0.5rem 0.3rem 0.3rem 0.3rem;"
+              src="assets/images/hero%20food%20ingredients-1280x510.jpg">
+            <div style="text-align: left">
+              <h3 style="color: #3b4047; font-weight: bold;font-size: x-large;padding-top: 25px">Food and drink</h3>
+              <p style="color: #333333;">
+                Food and beverage manufacturers work in an increasingly
+                complex and ever-changing environment. Our expertise in  transforming agricultural products into high-quality
+                ingredients gives you an edge in manufacturing products that satisfy consumers around the world.
+              </p>
+              <a style="color: #023669; font-weight: bold;font-size: medium" href="">read more
+                <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class=" w-26 h-12">
+            <img style="border-radius: 0.5rem 0.3rem 0.3rem 0.3rem;"
+                 src="assets/images/preview-can-innovation.jpg">
+            <div style="text-align: left">
+              <h3 style="color: #3b4047; font-weight: bold;padding-top: 25px">Animal nutrition</h3>
+              <p style="color: #333333;font-size: 15px">
+                Cargill has over 120 years of experience in animal nutrition solutions.
+                We come to work every day to research,
+                innovate and create solutions that enable you and your customers to succeed
+              </p>
+              <a style="color: #023669; font-weight: bold;font-size: medium" href="">read more
+                <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+  
+          <div class=" w-26 h-12">
+            <div class="grid grid-cols-2 justify-evenly" style="text-align: left;margin-bottom: 20px">
+                <img style="border-radius: 0.5rem 0.3rem 0.3rem 0.3rem;"
+                     src="assets/images/industry.jpg">
+              <div style="text-align: left;margin-left: -6em">
+                <h4 style="color: #3b4047; font-weight: bold;font-size: large">Industrial</h4>
+                <p style="color: #333333;">
+                  Solutions to increase profitability and <br>improve operations.
+                  Customized <br> products for industrial applications.
+                </p>
+              </div>
+            </div>
+  
+            <div class="grid grid-cols-2 justify-evenly" style="text-align: left; margin-bottom: 20px">
+              <img style="border-radius: 0.5rem 0.3rem 0.3rem 0.3rem;"
+                   src="assets/images/agric.jpg">
+              <div style="text-align: left;margin-left: -6em">
+                <h4 style="color: #3b4047; font-weight: bold;font-size: large">Agricultural</h4>
+                <p style="color: #333333;">
+                  We connect grain and oilseed producers and users around the world through origination,
+                  trade, processing and distribution.
+                </p>
+              </div>
+            </div>
+  
+            <div class="grid grid-cols-2 justify-evenly" style="text-align: left; margin-bottom: 20px">
+              <img style="border-radius: 0.5rem 0.3rem 0.3rem 0.3rem;"
+                   src="assets/images/pharmacy.jpg">
+              <div style="text-align: left;margin-left: -6em">
+                <h4 style="color: #3b4047; font-weight: bold;font-size: large">Pharmaceutical</h4>
+                <p style="color: #333333;">
+                  Excipients and active ingredients of natural origin for a range of pharmaceutical products.
+                </p>
+              </div>
+            </div>
+            <a style="color: #023669; font-weight: bold;font-size: medium" href="">view all
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    <nz-footer>Designed & Developed By Eclectics International</nz-footer>
+  </nz-layout>
+  

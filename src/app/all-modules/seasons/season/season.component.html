@@ -1,0 +1,80 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>Planting Season Parameters</span><br><br>
+        <button nz-button nzType="primary" nzDanger (click)="showModal()">Add New Planting Parameter</button>
+
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>SEASON</th>
+                        <th>START DATE</th>
+                        <th>END DATE</th>
+                        <th>CROPS</th>
+                        <th>MANAGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of listSeasons;let i = index">
+                        <td>{{row.id}}</td>
+                        <td>{{row.season}}</td>
+                        <td>{{row.crop}}</td>
+                        <td>{{row.startDate}}</td>
+                        <td>{{row.endDate}}</td>
+                        <td>
+                            <button nz-button nzType="primary" [nzSize]="size"><span nz-icon nzType="file-image"></span>View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>
+
+<nz-modal
+[(nzVisible)]="isVisible"
+[nzTitle]="modalTitle"
+[nzContent]="modalContent"
+[nzFooter]="modalFooter"
+(nzOnCancel)="handleCancel()"
+>
+<ng-template #modalTitle>Add New Planting Season Parameters</ng-template>
+<ng-template #modalContent>
+    <form  [formGroup]="addseason">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Season Name <span class="text-danger">*</span></label>
+                  <input class="form-control" type="text" formControlName="season">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Crop <span class="text-danger">*</span></label>
+                  <input class="form-control" type="text" formControlName="crop">
+                </div>
+              </div>
+              <div class=" col-sm-6">
+                <div class="form-group">
+                  <label>Start Date</label>
+                  <input class="form-control" type="text" formControlName="startDate">
+                </div>
+              </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>End Date <span class="text-danger">*</span></label>
+              <input class="form-control" type="text" formControlName="endDate">
+            </div>
+          </div>
+        </div>
+      </form>
+</ng-template>
+<ng-template #modalFooter>
+  <button nz-button nzType="default" nzDanger (click)="handleCancel()" style="margin-right: 1em;">Cancel</button>
+  <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading" style="margin-right: 11em;">
+    Submit
+</button>
+</ng-template>
+</nz-modal>

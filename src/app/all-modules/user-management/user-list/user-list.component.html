@@ -1,0 +1,146 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>System User Account Management</span><br><br>
+        <button nz-button nzType="primary" nzDanger (click)="showModal()">Add New User Account</button>
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>DATE OF<br>REGISTRATION</th>
+                        <th>USER ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PHONE NUMBER</th>
+                        <th>MODULE</th>
+                        <!-- <th>ADDRESS</th> -->
+                        <th>VIEW<br>DETAILS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let users of listUsers;let i = index">
+                        <td>{{users.id}}</td>
+                        <td>{{users.reg_date}}</td>
+                        <td>{{users.userId}}</td>
+                        <td>{{users.firstName}}</td>
+                        <td>{{users.lastName}}</td>
+                        <td>{{users.mobileNumber}}</td>
+                        <td>{{users.moduleAssigned}}</td>
+                        <!-- <td>{{users.address}}</td> -->
+                        <td style="padding-left: 20px;">
+                            <div>
+                            <button nz-button nzType="primary" nzSize="small"  nz-dropdown [nzDropdownMenu]="menu" nzPlacement="bottomCenter"><span nz-icon nzType="file-image"></span>View</button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item (click)="view(users)">
+                                    <span nz-icon nzType="eye" style="color: blue;"></span>view
+                                    </li>
+                                    <li nz-menu-item (click)="showModal()">
+                                    <span nz-icon nzType="edit" style="color: blue;"></span>edit
+                                    </li>
+                                    <li nz-menu-item (click)="assignModal()">
+                                    <span nz-icon nzType="profile" style="color: blue;"></span>Assign
+                                    </li>
+                                </ul>
+                                </nz-dropdown-menu>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>
+<nz-modal
+[(nzVisible)]="isVisible"
+[nzTitle]="modalTitle"
+[nzContent]="modalContent"
+[nzFooter]="modalFooter"
+(nzOnCancel)="handleCancel()"
+>
+<ng-template #modalTitle>Add New User Account</ng-template>
+<ng-template #modalContent>
+  <form  [formGroup]="addUsers">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>First Name <span class="text-danger">*</span></label>
+          <input class="form-control" type="text" formControlName="firstName">
+        </div>
+      </div>
+      <div class=" col-sm-6">
+        <div class="form-group">
+          <label>Last Name</label>
+          <input class="form-control" type="text" formControlName="lastName">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Email <span class="text-danger">*</span></label>
+          <input class="form-control" type="email"
+                 [class.invalid]="addUsers.get('email').invalid && addUsers.get('email').touched"
+                 formControlName="email">
+          <div
+            *ngIf="addUsers.get('email').invalid && addUsers.get('email').touched">
+            <small
+              *ngIf="addUsers.get('email').invalid && addUsers.get('email').touched"
+              class="text-danger"> *Email is required</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Mobile Phone Number </label>
+          <input class="form-control" type="text" formControlName="mobileNumber">
+        </div>
+
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>User ID</label>
+          <input class="form-control" type="text" formControlName="userId">
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Assign Module</label>
+          <mat-select formControlName="moduleAssigned" class="form-control">
+            <mat-option value="Field Agent">Field Agent</mat-option>
+            <mat-option value="Wallet Module">Wallet Module</mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-template>
+<ng-template #modalFooter>
+  <button nz-button nzType="default" nzDanger (click)="handleCancel()">Cancel</button>
+  <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading" style="margin-right: 12em;">
+    Submit
+</button>
+</ng-template>
+</nz-modal>
+
+<nz-modal
+[(nzVisible)]="isAssignVisible"
+[nzTitle]="modalTitleTwo"
+[nzContent]="modalContentTwo"
+[nzFooter]="modalFooterTwo"
+(nzOnCancel)="handleCancel()"
+>
+<ng-template #modalTitleTwo>Assign Profile</ng-template>
+<ng-template #modalContentTwo>
+  <form  [formGroup]="addUsers">
+    
+  </form>
+</ng-template>
+<ng-template #modalFooterTwo>
+  <button nz-button nzType="default" nzDanger (click)="handleCancel()">Cancel</button>
+  <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading" style="margin-right: 12em;">
+    Submit
+</button>
+</ng-template>
+</nz-modal>
+    

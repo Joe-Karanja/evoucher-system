@@ -1,0 +1,36 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>Wallet Top-ups Details</span><br>
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>FARMER ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PHONE NUMBER</th>
+                        <th>LOCATION</th>
+                        <th>WALLET ID</th>
+                        <th>TOP UP</th>
+                        <th>BALANACE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of listTopups;let i = index">
+                        <td>{{row.id}}</td>
+                        <td>{{row.farmer_id}}</td>
+                        <td>{{row.fname}}</td>
+                        <td>{{row.lname}}</td>
+                        <td>{{row.phone_no}}</td>
+                        <td>{{row.location}}</td>
+                        <td>{{row.wallet_id}}</td>
+                        <td>{{row.top_up}}</td>
+                        <td>{{row.balance}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>

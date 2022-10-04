@@ -1,0 +1,8 @@
+nz-card{
+    border-radius: 6px;
+    /* font-size: 15px; */
+}
+nz-tag{
+    min-height: fit-content;
+    font-size: 13px;
+}

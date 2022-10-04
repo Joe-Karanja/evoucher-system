@@ -1,0 +1,107 @@
+<div style="padding:30px;">
+    <div nz-row [nzGutter]="8">
+      <div nz-col [nzSpan]="3.3">
+        <nz-card>
+            <span>Active Farmers</span><br>
+            <i class="fa fa-users" aria-hidden="true" style="font-weight: bold;margin-top: 10px;"> 4,136</i>
+            <p style="margin-bottom: -20px;margin-left: -5px;">New Members 513</p>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="4">
+        <nz-card>
+            <span>Redeemed E-Vouchers</span><br>
+            <i aria-hidden="true" style="font-weight: bold;">UGX 13,625,402</i>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="4">
+        <nz-card>
+            <span>E-Vouchers Value</span><br>
+            <i aria-hidden="true" style="font-weight: bold;margin-top: 10px;">UGX 14,875,857</i>
+            <p style="margin-bottom: -20px; margin-left: -5px;">Total-UGX 14,875,857</p>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="3.2">
+        <nz-card>
+            <span>Registered Agents</span><br>
+            <i class="fa fa-user" aria-hidden="true" style="font-weight: bold;margin-top: 10px;"> 3,512</i>
+            <p style="color: red;margin-bottom: -20px;margin-left: -5px;">165.27% Growth since<br>last month</p>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="3.2">
+        <nz-card>
+            <span>Registered Agrovets</span><br>
+            <i class="fa fa-user" aria-hidden="true" style="font-weight: bold;margin-top: 10px;"> 232</i>
+            <p style="color: red;margin-bottom: -20px;margin-left: -5px;">165.27% since last<br>month</p>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="3.5">
+        <nz-card>
+            <span>Total Transactions</span><br>
+            <i class="fa fa-user" aria-hidden="true" style="font-weight: bold;margin-top: 10px;"> 23,250</i>
+            <p style="color: red;margin-bottom: -20px;margin-left: -5px;">165.27% since last<br>month</p>
+        </nz-card>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:30px;">
+    <div nz-row [nzGutter]="8">
+      <div nz-col [nzSpan]="14">
+        <nz-card>
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="22">
+              <span>E-Voucher Redemption</span>
+            </div>
+            <div nz-col [nzSpan]="2">
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" style="float: left;">
+                <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Check</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Alerts</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          <!-- <app-bar-charts></app-bar-charts> -->
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="10">
+        <nz-card>
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="22">
+              <span>E-Voucher Redemption</span>
+            </div>
+            <div nz-col [nzSpan]="2">
+              <button mat-icon-button [matMenuTriggerFor]="bar_menu" aria-label="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #bar_menu="matMenu" style="float: left;">
+                <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Check</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Alerts</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+  </div>

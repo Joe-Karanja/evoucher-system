@@ -1,0 +1,20 @@
+.row{
+    margin-top: -1em;
+}
+
+nz-descriptions{
+    padding-top: 3em;
+    font-weight: 600;
+}
+
+.nzTitle{
+    /* font-weight: 600; */
+}
+.z-descriptions-item{
+    font-weight: 600;
+}
+
+nz-tag{
+    height: 4.5em;
+    padding-top: 15px;
+}

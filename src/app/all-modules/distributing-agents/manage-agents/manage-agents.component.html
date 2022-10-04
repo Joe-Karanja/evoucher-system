@@ -1,0 +1,38 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>Registered Agents Details</span><br><br>
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <!-- <th>#</th> -->
+                        <th>DATE OF<br>REGISTRATION</th>
+                        <th>AGENT ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PHONE NUMBER</th>
+                        <th>STATION</th>
+                        <th>TRANSACTIONS</th>
+                        <th>VIEW</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let agents of listAgents;let i = index">
+                        <!-- <td>{{active.id}}</td> -->
+                        <td>{{agents.reg_date}}</td>
+                        <td>{{agents.agent_id}}</td>
+                        <td>{{agents.fname}}</td>
+                        <td>{{agents.lname}}</td>
+                        <td>{{agents.phone_no}}</td>
+                        <td>{{agents.station}}</td>
+                        <td>{{agents.transactions}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>
+
+    

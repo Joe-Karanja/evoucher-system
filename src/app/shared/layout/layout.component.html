@@ -1,0 +1,184 @@
+<nz-layout class="layout">
+  <nz-sider nzBehavior="overlay" nzWidth="260px">
+      <div class="logo"><img src='./assets/img/logo.png' style="padding: 10px;"></div>
+
+      <nz-tabset style="background-color: #f7f7f7;">
+        <nz-tab [nzTitle]="all" style="background-color: #f7f7f7;">
+          <ng-template #all>
+            <span nz-icon nzType="unordered-list"></span>
+            <span>All</span>
+          </ng-template>
+          <ul nz-menu nzTheme="light" nzMode="inline" style="margin-top: -15px;">
+            <li class="menu-title">
+              <span style="margin-top: 20px;">DIRECTORIES</span>
+            </li>
+            <li nz-menu-item (click)="dashboard()">
+              <span nz-icon nzType="dashboard"></span>
+              <span>Dashboard</span>
+            </li>
+            <li nz-menu-item (click)="generate()">
+              <span nz-icon nzType="pic-center"></span>
+              <span>Generate E-vouchers</span>
+            </li>
+            <li nz-menu-item (click)="active()">
+              <span nz-icon nzType="pic-left"></span>
+              <span>Active E-vouchers</span>
+            </li>
+            <li nz-menu-item (click)="redeemed()">
+              <span nz-icon nzType="pic-right"></span>
+              <span>Redeemed E-vouchers</span>
+            </li>
+            <li nz-menu-item (click)="unclaimed()">
+              <span nz-icon nzType="appstore"></span>
+              <span>Unclaimed E-vouchers</span>
+            </li>
+            <li class="menu-title">
+              <span>REGISTER BENEFICIARIES</span>
+            </li>
+            <li nz-menu-item (click)="registerFarmers()">
+              <span nz-icon nzType="user"></span>
+              <span>Farmer Organization</span>
+            </li>
+            <li nz-menu-item (click)="microFinance()">
+              <span nz-icon nzType="slack" nzTheme="outline"></span>
+              <span>Micro Finance</span>
+            </li>
+            <li nz-menu-item (click)="houseHolds()">
+              <span nz-icon nzType="slack" nzTheme="outline"></span>
+              <span>Small Households</span>
+            </li>
+            <li nz-menu-item (click)="manageBeneficiary()">
+              <span nz-icon nzType="slack" nzTheme="outline"></span>
+              <span>Manage Beneficiaries</span>
+            </li>
+    
+            <li class="menu-title">
+              <span>E-VOUCHER DISTRIBUTING AGENTS</span>
+            </li>
+            <li nz-menu-item (click)="registerAgents()">
+              <span nz-icon nzType="file"></span>
+              <span>Register Agents</span>
+            </li>
+            <li nz-menu-item (click)="manageAgents()">
+              <span nz-icon nzType="slack" nzTheme="outline"></span>
+              <span>Manage Agents</span>
+            </li>
+    
+            <li class="menu-title">
+              <span>E-VOUCHER IMPLEMENTING PARTNERS</span>
+            </li>
+            <li nz-menu-item (click)="registerPartners()">
+              <span nz-icon nzType="file"></span>
+              <span>Register Partners</span>
+            </li>
+            <li nz-menu-item (click)="managePartners()">
+              <span nz-icon nzType="slack" nzTheme="outline"></span>
+              <span>Manage Partners</span>
+            </li>
+    
+            <li class="menu-title">
+              <span>FARM ASSET MANAGEMENT</span>
+            </li>
+            <li nz-menu-item (click)="captureAssets()">
+              <span nz-icon nzType="file"></span>
+              <span>Capture Assets</span>
+            </li>
+            <li nz-menu-item (click)="manageAssets()">
+              <span nz-icon nzType="slack" nzTheme="outline"></span>
+              <span>Manage Assets</span>
+            </li>
+            <li nz-menu-item (click)="allocateAssets()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>Allocate Farm Assets</span>
+            </li>
+            <li nz-menu-item (click)="trackAssets()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>Track Asset Location</span>
+            </li>
+            <li nz-menu-item (click)="recoverAssets()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>Asset Recovery</span>
+            </li>
+            <li nz-menu-item (click)="invetoryAssets()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>Asset Inventory</span>
+            </li>
+            <li class="menu-title">
+              <span>WALLET TRANSACTIONS</span>
+            </li>
+            <li nz-menu-item (click)="walletAccount()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>Wallet Account</span>
+            </li>
+            <li nz-menu-item (click)="walletTrans()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>Wallet Transactions</span>
+            </li>
+            <li class="menu-title">
+              <span>E-VOUCHER TRANSACTIONS</span>
+            </li>
+            <li nz-menu-item (click)="evtopUps()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>E-Voucher top-ups</span>
+            </li>
+            <li nz-menu-item (click)="evRedemption()">
+              <span nz-icon nzType="video-camera"></span>
+              <span>E-Voucher Redemption</span>
+            </li>
+          </ul>
+        </nz-tab>
+        <nz-tab [nzTitle]="system">
+          <ng-template #system>
+            <span nz-icon nzType="setting"></span>
+            <span>Settings</span>
+          </ng-template>
+
+          <ul nz-menu nzTheme="light" nzMode="inline" style="margin-top: -15px;">
+            <li class="menu-title">
+              <span style="padding-top: 20px;">USER MANAGEMENT</span>
+            </li>
+            <li nz-menu-item (click)="users()">
+              <span nz-icon nzType="user"></span>
+              <span>Users</span>
+            </li>
+            <li nz-submenu nzOpen nzIcon="profile" nzTitle="Profiles">
+              <ul>
+                <li nz-menu-item (click)="profiles()">Profiles</li>
+                <li nz-menu-item (click)="roles()">Role</li>
+              </ul>
+            </li>
+            <li class="menu-title">
+              <span style="padding-top: 20px;">SEASONS</span>
+            </li>
+            <li nz-menu-item (click)="seasons()">
+              <span nz-icon nzType="user"></span>
+              <span>Planting Seasons</span>
+            </li>
+          </ul>
+        </nz-tab>
+      </nz-tabset>
+      <!-- <nz-tabset style="background-color: #f7f7f7;">
+        <nz-tab nz-icon nzTitle="All">
+          
+        </nz-tab>
+        <nz-tab nzTitle="System Settings">
+          
+        </nz-tab>
+      </nz-tabset> -->
+    </nz-sider>
+    <nz-layout class="right-layout">
+      <nz-header>
+        <span style="color: #ff3333;padding-left: 10px;font-weight: bold;font-size: 20px;">Welcome Admin</span>
+        <div style="float: right;margin-right: 10px;">
+          <!-- <button nz-button nzType="primary" nzDanger><span nz-icon nzType="logout"></span>Sign Out</button> -->
+          <button (click)="logOut()" class="btn btn-facebook btn-sm"><i class="fa fa-power-off mr-2" style="padding-right: 2px;"></i>Sign Out</button>
+        </div>
+      </nz-header>
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer>Eclectics International ©2022 E-Voucher System</nz-footer>
+    </nz-layout>
+  </nz-layout>

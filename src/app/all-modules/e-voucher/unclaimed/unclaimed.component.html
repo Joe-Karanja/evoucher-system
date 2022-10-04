@@ -1,0 +1,40 @@
+
+<div style="padding:30px;">
+    <nz-card>
+        <span>Unclaimed E-Vouchers</span><br><br>
+          <div class="table-responsive">
+            <table datatable  id = "datatable" class="table table-striped custom-table mb-0 datatable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr>
+                        <!-- <th>#</th> -->
+                        <th>DATE</th>
+                        <th>FARM ID</th>
+                        <th>AGENT FIRSTNAME</th>
+                        <th>AGENT LASTNAME</th>
+                        <th>FARMER FIRSTNAME</th>
+                        <th>FARMER LASTNAME</th>
+                        <th>PHONE NUMBER</th>
+                        <th>REGION</th>
+                        <th>VOUCHER VALUE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let active of listActive;let i = index">
+                        <!-- <td>{{active.id}}</td> -->
+                        <td>{{active.date_Created}}</td>
+                        <td>{{active.farm_id}}</td>
+                        <td>{{active.agent_fname}}</td>
+                        <td>{{active.agent_lname}}</td>
+                        <td>{{active.farmer_fname}}</td>
+                        <td>{{active.farmer_lname}}</td>
+                        <td>{{active.phone_no}}</td>
+                        <td>{{active.region}}</td>
+                        <td>{{active.voucher_value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nz-card>
+</div>
+
+    
