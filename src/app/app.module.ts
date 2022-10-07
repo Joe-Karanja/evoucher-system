@@ -20,10 +20,10 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { ToastrModule } from 'ngx-toastr';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { IgxStepperModule } from 'igniteui-angular';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'angular-highcharts';
 
 registerLocaleData(en);
 
@@ -52,10 +52,12 @@ registerLocaleData(en);
     DataTablesModule,
     MatStepperModule,
     MatFormFieldModule,
-    IgxStepperModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgxChartsModule,
+    ChartsModule,
+    ChartModule,
+    
+    
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

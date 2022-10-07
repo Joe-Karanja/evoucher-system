@@ -1,1 +1,277 @@
-<p>micro-finance works!</p>
+<div style="padding:30px;">
+    <nz-card>
+      <div class="row">
+        <div class="col-sm-6">
+          <span>Micro-Finance Registration</span><br><br>
+        </div>
+        <div class="col-sm-3"  style="float: right;">
+          <nz-upload
+                nzName="file"
+                [(nzFileList)]="files"
+                [nzTransformFile]="transformFile"
+                [nzData]="getExtraData"
+                [nzAction]="mockOSSData.host"
+                (nzChange)="onChange($event)"
+              >
+                <button nz-button nzType="primary" nzDanger style="float: right;">
+                  <span nz-icon nzType="upload"></span>
+                  Import Data
+                </button>
+          </nz-upload>
+        </div>
+        <div class="col-sm-3">
+            <button nz-button nzType="primary"  nzDanger style="background-color: #cc0000;">
+              <span nz-icon nzType="download"></span>
+              Download Template
+            </button>
+        </div>
+      </div>
+      <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+        <mat-step [stepControl]="farmerDetails">
+          <ng-template matStepLabel>  Basic Details<br> Basic Details</ng-template>
+          <form [formGroup]="farmerDetails" class="mat-form" id="farmer">
+            <div class="form-header">
+              <h5>Micro-Finance Details</h5>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-label>Type of Micro-Finance</mat-label>
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="famerType">
+                    <mat-option value="Small Scale">Small Scale</mat-option>
+                    <mat-option value="Large Scale">Large Scale</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-label>First Name</mat-label>
+                <mat-form-field appearance="fill">
+                  <input matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-label>Last Name</mat-label>
+                <mat-form-field appearance="fill">
+                  <!-- <mat-label>First Name</mat-label> -->
+                  <input matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-label>Gender</mat-label>
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="gender">
+                    <mat-option value="" selected></mat-option>
+                    <mat-option value="Male">Male</mat-option>
+                    <mat-option value="Female">Female</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-lg-3">
+                <mat-label>ID Number</mat-label>
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="id_number">
+                </mat-form-field>
+              </div>
+              <div class="col col-lg-4" style="margin-left: 5em;align-content: center;">
+                <mat-label>Registration Date</mat-label>
+                <mat-form-field appearance="fill">
+                  <input matInput [matDatepicker]="picker" formControlName="date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col col-lg-3">
+                <mat-label>Tax Pin</mat-label>
+                <mat-form-field appearance="fill">
+                  <input matInput formControlName="taxPin">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-label>select District</mat-label>
+                <mat-form-field appearance="fill">
+                  <mat-select  formControlName="district">
+                    <mat-option value="Small Scale">Mbarara</mat-option>
+                    <mat-option value="Large Scale">Tororo</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-label>select Region</mat-label>
+                <mat-form-field appearance="fill">
+                  <mat-select  formControlName="region">
+                    <mat-option value="Male">Toror</mat-option>
+                    <mat-option value="Female">Mbarara</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-label>select department</mat-label>
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="department">
+                    <mat-option value="" selected></mat-option>
+                    <mat-option value="Male">Maize</mat-option>
+                    <mat-option value="Female">Banana</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-label>Village/Ward</mat-label>
+                <mat-form-field appearance="fill">
+                  <input matInput placeholder="Village/Ward" formControlName="village">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row" style="padding: 10px;">
+              <mat-form-field appearance="fill">
+                <input matInput type="file" id="img" placeholder="Choose file" accept=".jpg,.png," (change)="onSelect($event)">
+              </mat-form-field>
+            </div>
+          </form>
+          <div class="step-button">
+            <button mat-button matStepperNext >Next</button> 
+            <!-- (click)="onSubmitBasic()" -->
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="contactDetails">
+          <ng-template matStepLabel>Contact Details<br>Contact Details</ng-template>
+          <form [formGroup]="contactDetails" class="mat-form">
+            <div class="form-header">
+              <h5>Contact Details</h5>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Farm Manager" formControlName="farm_manager">
+              </mat-form-field>  
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Primary Phone Number" formControlName="pri_number">
+              </mat-form-field> 
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Alternative Phone Number" formControlName="alt_number">
+              </mat-form-field>
+            </div>     
+            <div class="row">
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Primary Email" formControlName="pri_email">
+              </mat-form-field>  
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Alternative Email" formControlName="alt_email">
+              </mat-form-field> 
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Postal Address" formControlName="post_address">
+              </mat-form-field>
+            </div>   
+          </form>
+          <div class="step-button">
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="accountDetails">
+          <ng-template matStepLabel>Account Details <br> Login Account Details</ng-template>
+          <form [formGroup]="accountDetails" class="mat-form">
+            <div class="form-header">
+              <h5>Account Details</h5>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill" class="one">
+                <mat-select placeholder="select account type" formControlName="account_type">
+                  <mat-option value="" selected></mat-option>
+                  <mat-option value="farmer">Farmer</mat-option>
+                  <mat-option value="agent">Agent</mat-option>
+                  <mat-option value="partner">Partner</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="one">
+                <mat-select placeholder="role" formControlName="role">
+                  <mat-option value="" selected></mat-option>
+                  <mat-option value="Male">Admin</mat-option>
+                  <mat-option value="farmer">Farmer</mat-option>
+                  <mat-option value="agent">Agent</mat-option>
+                  <mat-option value="partner">Partner</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Farm Manager" formControlName="farm_manager">
+              </mat-form-field>  
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Primary Phone Number" formControlName="pri_number">
+              </mat-form-field> 
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Alternative Phone Number" formControlName="alt_number">
+              </mat-form-field>
+            </div> 
+            <div class="row">
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Mobile Number" formControlName="mobileNumber">
+              </mat-form-field>  
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="ID Number" formControlName="id_number">
+              </mat-form-field> 
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Password" formControlName="password">
+              </mat-form-field>
+            </div>
+          </form>
+          <div class="step-button">
+            <button mat-button matStepperNext >Next</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="farmDetails">
+          <ng-template matStepLabel>Farm Details <br> Farm Details</ng-template>
+          <form [formGroup]="farmDetails" class="mat-form">
+            <div class="form-header">
+              <h5>Farn Details</h5>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Farm Name" formControlName="farmName">
+              </mat-form-field>  
+              <mat-form-field appearance="fill" class="second">
+                <input matInput placeholder="Farm Size" formControlName="farmSize">
+              </mat-form-field> 
+              <mat-form-field appearance="fill" class="second">
+                <mat-select placeholder="Unit of Measure" formControlName="unit">
+                  <mat-option value="" selected></mat-option>
+                  <mat-option value="Acres">Acres</mat-option>
+                  <mat-option value="Hectares">Hectares</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="fill" class="first">
+                <input matInput placeholder="Cocoa Tree Age" formControlName="cocoa_age">
+              </mat-form-field>  
+              <mat-form-field appearance="fill" class="first">
+                <input matInput placeholder="Cocoa Tree Height" formControlName="tree_height">
+              </mat-form-field> 
+              <mat-form-field appearance="fill" class="first">
+                <input matInput placeholder="Estimated Basal Area(m2/ha)" formControlName="basal_area">
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="first">
+                <input matInput placeholder="Estimated Yield" formControlName="estimated_yield">
+              </mat-form-field>
+            </div>
+          </form>
+          <div class="step-button">
+            <button mat-button matStepperNext >Next</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Micro-Finance Survey<br> Micro-Finance Survey</ng-template>
+          <p>You are now done.</p>
+          <div class="step-button">
+            <button mat-button (click)="onSubmit()">Finish</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+        </mat-step>
+      </mat-stepper>    
+    </nz-card>
+  </div>

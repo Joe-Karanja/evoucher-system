@@ -3,13 +3,8 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {StepperOrientation} from '@angular/material/stepper';
-import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from '@angular/material/core';
 import {Observable} from 'rxjs';
 import {filter, map} from 'rxjs/operators'
-import { DatePipe } from '@angular/common';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
-import autoTable from 'jspdf-autotable';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 import { NzUploadChangeParam, NzUploadFile } from 'ng-zorro-antd/upload';
@@ -31,48 +26,48 @@ export class RegisterFarmersComponent implements OnInit {
 
   // Basic Farmer Details
   farmerDetails = this.fb.group({
-    famerType: ['', Validators.required],
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
-    gender: ['', Validators.required],
-    id_number: ['', Validators.required],
-    date: ['', Validators.required],
-    tax_pin: ['', Validators.required],
-    district: ['', Validators.required],
-    region: ['', Validators.required],
-    department: ['', Validators.required],
-    village: ['', Validators.required],
+    famerType: ['', [Validators.required]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    gender: ['', [Validators.required]],
+    id_number: ['', [Validators.required]],
+    date: ['', [Validators.required]],
+    tax_pin: ['', [Validators.required]],
+    district: ['', [Validators.required]],
+    region: ['', [Validators.required]],
+    department: ['', [Validators.required]],
+    village: ['', [Validators.required]],
   });
 
   // Farmer Contact Details
   contactDetails = this.fb.group({
-    farm_manager: ['', Validators.required],
-    pri_number: ['', Validators.required],
-    alt_number: ['', Validators.required],
-    pri_email: ['', Validators.required],
-    alt_email: ['', Validators.required],
-    post_address: ['', Validators.required],
+    farm_manager: ['', [Validators.required]],
+    pri_number: ['', [Validators.required]],
+    alt_number: ['', [Validators.required]],
+    pri_email: ['', [Validators.required]],
+    alt_email: ['', [Validators.required]],
+    post_address: ['', [Validators.required]],
   });
 
   // Farmer Account Details
   accountDetails = this.fb.group({
-    account_type: ['', Validators.required],
-    role: ['', Validators.required],
-    farm_manager: ['', Validators.required],
-    pri_number: ['', Validators.required],
-    alt_number: ['', Validators.required],
-    mobileNumber: ['', Validators.required],
-    id_number: ['', Validators.required],
-    password: ['', Validators.required],
+    account_type: ['', [Validators.required]],
+    role: ['', [Validators.required]],
+    farm_manager: ['', [Validators.required]],
+    pri_number: ['', [Validators.required]],
+    alt_number: ['', [Validators.required]],
+    mobileNumber: ['', [Validators.required]],
+    id_number: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
   farmDetails = this.fb.group({
-    farmName: ['', Validators.required],
-    farmSize: ['', Validators.required],
-    unit: ['', Validators.required],
-    cocoa_age: ['', Validators.required],
-    tree_height: ['', Validators.required],
-    basal_area: ['', Validators.required],
-    estimated_yield: ['', Validators.required],
+    farmName: ['', [Validators.required]],
+    farmSize: ['', [Validators.required]],
+    unit: ['', [Validators.required]],
+    cocoa_age: ['', [Validators.required]],
+    tree_height: ['', [Validators.required]],
+    basal_area: ['', [Validators.required]],
+    estimated_yield: ['', [Validators.required]],
   });
   stepperOrientation: Observable<StepperOrientation>;
 
@@ -179,9 +174,6 @@ export class RegisterFarmersComponent implements OnInit {
   }
   
   downloadTemp() {
-    const doc = new jsPDF();
-    autoTable(doc, { html: '#farmer' })
-    doc.save('farmer-details-form.pdf')
   }
   onSubmit(){
     const formData = {

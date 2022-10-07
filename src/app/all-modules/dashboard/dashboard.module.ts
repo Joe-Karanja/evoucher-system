@@ -1,3 +1,5 @@
+import { StatisticsModule } from './../../statistics/statistics.module';
+import { BarChartsComponent } from './../../statistics/bar-charts/bar-charts.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,7 +10,8 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartsModule } from 'ng2-charts';
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -16,6 +19,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     AdminDashboardComponent,
+    // BarChartsComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NzMenuModule,
     MatMenuModule,
     MatIconModule,
-    NgxChartsModule
+    ChartsModule,
+    StatisticsModule
   ]
 })
 export class DashboardModule { }

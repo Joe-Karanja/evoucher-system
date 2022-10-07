@@ -1,10 +1,10 @@
 <div style="padding:30px;">
   <nz-card>
-    <div nz-row [nzGutter]="8">
-      <div nz-col [nzSpan]="3.3">
+    <div class="row">
+      <div class="col-sm-6">
         <span>Farmer Registration</span><br><br>
       </div>
-      <div nz-col [nzSpan]="3.3" style="margin-left: 45em;">
+      <div class="col-sm-3"  style="float: right;">
         <nz-upload
               nzName="file"
               [(nzFileList)]="files"
@@ -13,33 +13,13 @@
               [nzAction]="mockOSSData.host"
               (nzChange)="onChange($event)"
             >
-              <button nz-button nzType="primary" nzDanger>
+              <button nz-button nzType="primary" nzDanger style="float: right;">
                 <span nz-icon nzType="upload"></span>
-                Import Farmers
+                Import Data
               </button>
         </nz-upload>
-        <!-- <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
-          <button nz-button nzType="primary" nzDanger>
-            <span nz-icon nzType="upload"></span>
-            Import Farmers
-          </button>
-        </nz-upload>
-        <button
-          nz-button
-          [nzType]="'primary'"
-          [nzLoading]="uploading"
-          (click)="handleUpload()"
-          [disabled]="fileList.length === 0"
-          style="margin-top: 16px"
-        >
-          {{ uploading ? 'Uploading' : 'Start Upload' }}
-        </button> -->
-        <!-- <button nz-button nzType="primary" nzDanger accept=".pdf,.word," (change)="oNSelect($event)">
-          <span nz-icon nzType="upload"></span>
-          Import Farmers
-        </button> -->
       </div>
-      <div nz-col [nzSpan]="3.3">
+      <div class="col-sm-3">
           <button nz-button nzType="primary"  nzDanger style="background-color: #cc0000;">
             <span nz-icon nzType="download"></span>
             Download Template
@@ -51,80 +31,102 @@
         <ng-template matStepLabel>  Basic Details<br>Farmer Basic Details</ng-template>
         <form [formGroup]="farmerDetails" class="mat-form" id="farmer">
           <div class="form-header">
-            <h5>Farmer Details</h5>
+            <h5>Micro-Finance Details</h5>
           </div>
           <div class="row">
-              <mat-form-field appearance="fill" class="first">
-                <mat-select placeholder="Type of Farmer" formControlName="famerType">
+            <div class="col-sm-3">
+              <mat-label>Type of Farmer</mat-label>
+              <mat-form-field appearance="fill">
+                <mat-select formControlName="famerType">
                   <mat-option value="" selected></mat-option>
                   <mat-option value="Small Scale">Small Scale</mat-option>
                   <mat-option value="Large Scale">Large Scale</mat-option>
                 </mat-select>
               </mat-form-field>
-              <mat-form-field appearance="fill" class="first">
-                <input matInput placeholder="First Name" formControlName="firstName">
+            </div>
+            <div class="col-sm-3">
+              <mat-label>First Name</mat-label>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="firstName">
               </mat-form-field>
-              <mat-form-field appearance="fill" class="first">
-                <!-- <mat-label>First Name</mat-label> -->
+            </div>
+            <div class="col-sm-3">
+              <mat-label>Last Name</mat-label>
+              <mat-form-field appearance="fill">
                 <input matInput placeholder="Last Name" formControlName="lastName">
               </mat-form-field>
-              <mat-form-field appearance="fill" class="first">
-                <mat-select placeholder="Gender" formControlName="gender">
+            </div>
+            <div class="col-sm-3">
+              <mat-label>Gender</mat-label>
+              <mat-form-field appearance="fill">
+                <mat-select formControlName="gender">
                   <mat-option value="" selected></mat-option>
                   <mat-option value="Male">Male</mat-option>
                   <mat-option value="Female">Female</mat-option>
                 </mat-select>
               </mat-form-field>
+            </div>
           </div>
           <div class="row">
-              <mat-form-field appearance="fill" class="second">
-                <!-- <mat-label>First Name</mat-label> -->
-                <input matInput placeholder="ID Number" formControlName="id_number">
+            <div class="col col-lg-3">
+              <mat-label>ID Number</mat-label>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="id_number">
               </mat-form-field>
-              <mat-form-field appearance="fill" class="second">
-                <input matInput [matDatepicker]="picker" placeholder="Choose a date" style="padding-bottom: 10px;" formControlName="date">
-                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            </div>
+            <div class="col col-lg-4" style="margin-left: 5em;align-content: center;">
+              <mat-label>Registration Date</mat-label>
+              <mat-form-field appearance="fill">
+                <input matInput [matDatepicker]="picker" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
-              <mat-form-field appearance="fill" class="second">
-                <!-- <mat-label>First Name</mat-label> -->
-                <input matInput placeholder="Tax Pin" formControlName="taxPin">
+            </div>
+            <div class="col col-lg-3">
+              <mat-label>Tax Pin</mat-label>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="taxPin">
               </mat-form-field>
+            </div>
           </div>
           <div class="row">
-              <mat-form-field appearance="fill" class="first">
-                <!-- <mat-label>Choose an option</mat-label> -->
+            <div class="col col-lg-3">
+              <mat-label>District</mat-label>
+              <mat-form-field appearance="fill">
                 <mat-select placeholder="select District"  formControlName="district">
                   <mat-option value="" selected></mat-option>
                   <mat-option value="Small Scale">Mbarara</mat-option>
                   <mat-option value="Large Scale">Tororo</mat-option>
                 </mat-select>
               </mat-form-field>
-              
-              <mat-form-field appearance="fill" class="first">
-                <!-- <mat-label>GENDER</mat-label> -->
-                <mat-select placeholder="select Region"  formControlName="region">
-                  <mat-option value="" selected></mat-option>
+            </div>
+            <div class="col col-lg-3">
+              <mat-label>Region</mat-label>
+              <mat-form-field appearance="fill">
+                <mat-select formControlName="region">
                   <mat-option value="Male">Toror</mat-option>
                   <mat-option value="Female">Mbarara</mat-option>
                 </mat-select>
               </mat-form-field>
-              
-              <mat-form-field appearance="fill" class="first">
-                <mat-select placeholder="select department"  formControlName="department">
-                  <mat-option value="" selected></mat-option>
+            </div>
+            <div class="col col-lg-3">
+              <mat-label>Department</mat-label>
+              <mat-form-field appearance="fill">
+                <mat-select formControlName="department">
                   <mat-option value="Male">Maize</mat-option>
                   <mat-option value="Female">Banana</mat-option>
                 </mat-select>
               </mat-form-field>
-              <mat-form-field appearance="fill" class="first">
-                <!-- <mat-label>First Name</mat-label> -->
-                <input matInput placeholder="Village/Ward" formControlName="village">
+            </div>
+            <div class="col col-lg-3">
+              <mat-label>Village/Ward</mat-label>
+              <mat-form-field appearance="fill">
+                <input matInput formControlName="village">
               </mat-form-field>
+            </div>
           </div>
-          <div class="row">
-            <mat-form-field appearance="fill" class="full">
+          <div class="row" style="padding: 10px;">
+            <mat-form-field appearance="fill">
               <input matInput type="file" id="img" placeholder="Choose file" accept=".jpg,.png," (change)="onSelect($event)">
             </mat-form-field>
           </div>

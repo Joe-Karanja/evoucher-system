@@ -16,6 +16,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzTreeModule } from 'ng-zorro-antd/tree';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { NzTreeModule } from 'ng-zorro-antd/tree';
     MatSelectModule,
     NzTabsModule,
     MatCardModule,
+    NzTagModule
   ]
 })
 export class WalletTransactionsModule { }

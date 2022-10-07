@@ -1,13 +1,12 @@
-<!-- <ngx-charts-bar-vertical
-  [view]="[1050,400]"
-  [results]="Data"
-  [xAxisLabel]="'Year   2022'"
-  [legendTitle]="'Analysis Chart'"
-  [yAxisLabel]="'Completed Analysis'"
-  [legend]="true"
-  [showXAxisLabel]="true"
-  [showYAxisLabel]="true"
-  [xAxis]="true"
-  [yAxis]="true"
-  [gradient]="true">
-</ngx-charts-bar-vertical> -->
+<div class="chart-wrapper">
+  <canvas baseChart 
+  [datasets]="barChartData"
+  [labels]="barChartLabels"
+  [options]="barChartOptions"
+  [plugins]="barChartPlugins"
+  [legend]="barChartLegend"
+  [chartType]="barChartType">
+</canvas>
+</div>
+
+

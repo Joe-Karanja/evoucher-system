@@ -1,0 +1,129 @@
+nz-card{
+  border-radius: 6px;
+  /* font-size: 15px; */
+}
+
+.example-stepper {
+	margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    position: relative;
+    height: 4em;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-top: 0px;
+  }
+  
+
+  .mat-form {
+    position: relative;
+	  background-color: #f7f7f7;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    height: 26em;
+    width: 100%;
+    padding: 5px;
+  }
+  
+  button{
+	background: dimgray;
+	margin: 5px;
+	float: inline-end;
+	color: #fff;
+	float: right;
+  }
+  .step-button{
+	  background-color: #f7f7f7;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    margin-top: 10px;
+    height: 3.2em;
+    padding-bottom: 5px;
+  }
+
+  .form-header{
+    background: #ced4da;
+    border: 1px solid #ced4da;
+    border-radius: 3px;
+    margin-bottom: -5px;
+  }
+  h5{
+    /* margin-left: -55rem; */
+    text-align: left;
+    padding-bottom: -5px;
+  }
+  .row{
+    margin-top: 5px;
+  }
+  button{
+    border-radius: 3px;
+  }
+
+
+  nz-card{
+    border-radius: 6px;
+    /* font-size: 15px; */
+  }
+  
+  .example-stepper {
+    margin-top: 8px;
+    }
+    
+    .mat-form-field {
+      position: relative;
+      height: 4em;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      background-color: #fff;
+      margin-top: 0px;
+    }
+    
+  
+    .mat-form {
+      position: relative;
+      background-color: #f7f7f7;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      height: 26em;
+      width: 100%;
+      padding: 5px;
+    }
+    
+    button{
+    background: dimgray;
+    margin: 5px;
+    float: inline-end;
+    color: #fff;
+    float: right;
+    }
+    .step-button{
+      background-color: #f7f7f7;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      margin-top: 10px;
+      height: 3.2em;
+      padding-bottom: 5px;
+    }
+  
+    .form-header{
+      background: #ced4da;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      margin-bottom: -5px;
+    }
+    h5{
+      /* margin-left: -55rem; */
+      text-align: left;
+      padding-bottom: -5px;
+    }
+    .row{
+      margin-top: 5px;
+    }
+    button{
+      border-radius: 3px;
+    }
+  
+  
+  
